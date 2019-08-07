@@ -38,7 +38,7 @@ classifier.fit(X_train,y_train)
 predict= classifier.predict(X_test)
 
 #Print the accuracy score
-print(classifier.score(X_test,y_test)*100)
+print("Accuracy of the model is: "classifier.score(X_test,y_test)*100)
 
 #To compare the result, display the predicted value and the expected value 
 for i in range(len(predict)):
