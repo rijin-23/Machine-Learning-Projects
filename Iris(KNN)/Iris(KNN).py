@@ -1,7 +1,6 @@
 
 #Import the necessary libraries
 import pandas as pd
-import numpy as np
 
 #Storing the location of the dataset in a variable
 url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
