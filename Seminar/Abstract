@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug 13 14:27:34 2019
+
+@author: Rijin Thomas
+"""
+
+import speech_recognition as sr  
+import webbrowser as wb
+import pyttsx3
+
+
+r = sr.Recognizer()                                                                                   
+with sr.Microphone() as source:                                                                       
+    print("Speak:")                                                                                   
+    audio = r.listen(source)   
+
+try:
+    text =  r.recognize_google(audio)
+    print('Done!')
+    engine = pyttsx3.init()
+    engine.say('You said '+text)
+    engine.runAndWait()
+    print('You Said: '+text)
+    wb.open('https://wynk.in/music/detailsearch/'+text+'?q='+text)
+except sr.UnknownValueError:
+    print("Could not understand audio")
+except sr.RequestError as e:
+    print("Could not request results; {0}".format(e))
